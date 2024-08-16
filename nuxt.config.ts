@@ -6,6 +6,16 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true }
   },
+  css: ["@/assets/styles/main.scss"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/styles/_variables.scss";',
+        },
+      },
+    },
+  },
 
   compatibilityDate: '2024-08-13'
 })
