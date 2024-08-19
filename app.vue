@@ -37,3 +37,33 @@
   }
 }
 </style>
+
+<script setup lang="ts">
+useHead({
+  title: 'asaco\'s Portfolio',
+  meta: [
+    { name: 'description',
+      content: 'asaco\'s portfolio page introducing the works and skills.' },
+    { charset: 'UTF-8' },
+    { name: 'viewport',
+      content: 'width=device-width, initial-scale=1.0' },
+    { property: "og:type", content: "website" },
+    {
+      property: 'og:title',
+      content: 'asaco\'s Portfolio',
+    },
+    { property: 'og:url', content: 'https://nomnommorn.xyz/' },
+    { property: 'og:locale', content: 'ja_JP' },
+    { property: 'og:site_name', content: 'asaco\'s Portfolio' },
+    {
+      property: 'og:description',
+      content:
+        'This is asaco\'s portfolio page. asacoのポートフォリオページです。',
+    },
+    {
+      property: 'og:image',
+      content: 'https://nomnommorn.xyz/images/asaco-pf.png',
+    },
+  ]
+})
+</script>
