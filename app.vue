@@ -27,7 +27,6 @@
     position: relative;
     background-color: #fff;
     height: 100%;
-    padding: 30px 20px;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none; 
