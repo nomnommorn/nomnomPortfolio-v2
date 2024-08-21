@@ -1,17 +1,25 @@
 <template>
-  <article class="works-detail">
+  <main class="works-detail">
     <ContentDoc v-slot="{ doc: page }">
       <h1>{{ page.title }}</h1>
-      <div class="works_txt">
-        <div class="works_imgs">
-          <NuxtImg class="works_imgs-el" v-for="img in page.imgs" :key="img" :src="img" />
-        </div>
-        <ContentRenderer :key="page._id" :value="page"></ContentRenderer>
-        <p class="datatxt works_date">{{ page.date }}</p>
+
+      <NuxtImg class="works_mainimg" :src="page.mainimg" />
+      
+      <ul class="works_imgs">
+        <li class="works_imgs-el" v-for="img in page.imgs" :key="img">
+          <NuxtImg :src="img" />
+        </li>
+      </ul>
+
+    <div class="works_txt">
+      <ContentRenderer :key="page._id" :value="page"></ContentRenderer>
+      <div class="works_data">
+        <p class="datatxt works_date"><NuxtTime :datetime="page.date" year="numeric" month="short" day="numeric" /></p>
         <p class="datatxt works_tag" v-for="tag in page.tags" :key="tag">{{ tag }}</p>
       </div>
+    </div>
     </ContentDoc>
-  </article>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +34,7 @@
       content: "";
       padding: 0.8rem;
       margin-right: 0.8rem;
-      background-color: #EFEECE;
+      background-color: $yellow01;
       border-radius: 50px;
       float: left;
     }
@@ -34,7 +42,7 @@
   iframe {
     display: block;
     margin: 30px auto;
-    width: 70%;
+    width: 100%;
     height: 60vh;
     @media (max-width: $spwidth) {
       height: auto;
@@ -51,10 +59,10 @@
         width: 95%;
       }
       a {
-          color:#85DEEE;
+          color:$mizuiro01;
           text-decoration: underline;
           &:hover{
-            color: #EFEECE;
+            color: $yellow01;
           }
       }
       p{
@@ -62,41 +70,58 @@
         line-height: 1.5rem;
       }
     }
+
+    &_mainimg {
+      display: block;
+      width: 70%;
+      margin: 20px auto 80px;
+      @media (max-width: $spwidth) {
+        width: 100%;
+      }
+    }
+
     &_imgs {
-      width: fit-content;
-      max-width: 800px;
+      width: 70%;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      column-gap: 10px;
+      @media (max-width: $spwidth) {
+        width: 100%;
+        display: block;
+      }
       &-el {
-        display: inline-block;
+        flex: 1;
+        width: 100%;
         @media (max-width: $spwidth) {
           width: 100%;
+          display: block;
         }
       }
     }
+    &_data {
+      margin: 50px auto 0;
+    }
     &_date{
       padding-right: 50px;
+      @media (max-width: $spwidth) {
+        width: 100%;
+        display: block;
+      }
     }
     &_tag {
+      background-color: $mizuiro01;
+      border-radius: 150px;
+      padding: 7px;
+      margin-right: 7px;
       &::before {
         content:"#";
         float: left;
       }
-      &:not(:last-child) {
-        &::after {
-          content:",";
-          display: inline-block;
-          margin-right: 5px;
-        }
-      }
     }
   }
   .datatxt{
-    margin: 2rem auto;
     font-weight: 800;
-    font-family: Space Grotesk,sans-serif;
+    font-family: Space Grotesk, sans-serif;
     display: inline-block;
   }
 }

@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxt/content', "@nuxt/image"],
+  modules: [
+    '@nuxt/content',
+    "@nuxt/image",
+    "nuxt-time"
+  ],
 
   routeRules: {
     '/': { prerender: true }

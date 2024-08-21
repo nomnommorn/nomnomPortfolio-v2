@@ -1,19 +1,19 @@
 <template>
-    <div class="works">
-        <h1>Works</h1>
-        <ul id="works_list">
-            <ContentList path="/works" :query="query" v-slot="{ list }">
-                <li v-for="article in list" :key="article._path">
-                    <NuxtLink :to="article._path">
-                        <NuxtImg class="works_img" format="webp" :src="article.mainimg" />
-                        <h2>{{ article.title }}</h2>
-                        <p class="works_date">{{ article.date }}</p>
-                        <p class="works_tag" v-for="tag in article.tags" :key="tag">{{ tag }}</p>
-                    </NuxtLink>
-                </li>
-            </ContentList>
-        </ul>
-    </div>
+  <main class="works">
+    <h1>Works</h1>
+    <ul id="works_list">
+      <ContentList path="/works" :query="query" v-slot="{ list }">
+        <li v-for="article in list" :key="article._path">
+          <NuxtLink :to="article._path">
+            <NuxtImg class="works_img" format="webp" :src="article.mainimg" />
+            <h2>{{ article.title }}</h2>
+            <p class="works_date"><NuxtTime :datetime="article.date" year="numeric" month="short" day="numeric" /></p>
+            <p class="works_tag" v-for="tag in article.tags" :key="tag">{{ tag }}</p>
+          </NuxtLink>
+        </li>
+      </ContentList>
+    </ul>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -32,35 +32,38 @@ const query = {
 <style lang="scss" scope>
 .works {
   padding: 30px 20px;
+  h1 {
+    margin: 0 0 20px;
+  }
   #works_list {
     margin: 0 auto;
     width: 95%;
     list-style: none;
     padding: 0;
-    li{
+    li {
       float: left;
       width: 30%;
       margin-right: 4%;
       margin-bottom: 7%;
       @media (max-width: $spwidth) {
-        float: left;
-        width: 45%;
+        float: unset;
+        width: 100%;
         margin-right: 5%;
         margin-bottom: 5%;
         height: 250px;
       }
-      a{
+      a {
         width: 100%;
         height: 100%;
         display: block;
-        .works_img{
-          background: #000;
+        .works_img {
+          background: $mizuiro01;
           width: 100%;
           height: 217px;
           text-align: center;
           object-fit: contain;
           @media (max-width: $spwidth) {
-            height: 75px;
+            height: 120px;
           }
         }
         h2 {
@@ -87,17 +90,13 @@ const query = {
         .works_tag {
           display: inline-block;
           font-weight: 600;
-          text-decoration: underline;
+          background-color: $mizuiro01;
+          border-radius: 150px;
+          padding: 5px;
+          margin-right: 7px;
           &::before {
             content:"#";
             float: left;
-          }
-          &:not(:last-child) {
-            &::after {
-              content:",";
-              display: inline-block;
-              margin-right: 5px;
-            }
           }
         }
       }
