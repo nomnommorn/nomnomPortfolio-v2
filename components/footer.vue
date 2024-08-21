@@ -9,7 +9,7 @@
     </footer>
   </template>
 
-  <style>
+<style lang="scss" scope>
   #frame_r {
   position: fixed;
   width: 50px;
@@ -17,7 +17,7 @@
   top: 0;
   right: 0;
   z-index: 10;
-  background-color: #85DEEE;
+  background-color: $mizuiro01;
 }
 #frame_l {
   position: fixed;
@@ -26,12 +26,12 @@
   top: 0;
   left: 0;
   z-index: 10;
-  background-color: #85DEEE;
+  background-color: $mizuiro01;
 }
 #frame_btm {
   position: fixed;
   width: 100%;
-  border-bottom: 30px solid #85DEEE;
+  border-bottom: 30px solid $mizuiro01;
   top: calc(100% - 30px);
   left: 0;
   z-index: 12;
@@ -42,7 +42,7 @@
   right: calc(42px - 17px);
   width: 140px;
   height: 140px;
-  background-image: url(../public/images/rect.png);
+  background-image: url(/images/rect.png);
   background-repeat:  no-repeat;
   background-position: right top; 
   background-size: contain;
@@ -58,11 +58,11 @@
   right: 26px;
   width: 140px;
   height: 140px;
-  background-image: url(../public/images/rect.png);
+  background-image: url(/images/rect.png);
   background-repeat: no-repeat;
   background-position: right top;
   background-size: contain;
   transform: rotate(90deg);
   z-index: 11;
 }
-  </style>
+</style>

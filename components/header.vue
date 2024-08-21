@@ -51,7 +51,7 @@ const toggle = () => {
     header {
       position: fixed;
       display: inline-block;
-      background-color: #85DEEE;
+      background-color: $mizuiro01;
       width: 100vw;
       height: 185px;
       z-index: 11;
@@ -64,11 +64,11 @@ const toggle = () => {
       display: inline-block;
       width: 100%;
       height: 100%;
-      #sitetitle {
+      #sitetitle a{
         display: block;
         font-family: Sarina, cursive;
         font-size: 5.3rem;
-        color: #EFEECE;
+        color: $yellow01;
         margin: 20px auto 0;
         width: fit-content;
         height: 75px;
@@ -82,7 +82,6 @@ const toggle = () => {
         display: block;
         margin: 25px auto;
         padding: 0;
-        color: #EFEECE;
         font-weight: 800;
         font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
         font-size: 24px;
@@ -92,6 +91,9 @@ const toggle = () => {
         text-align: center;
         z-index: 100;
         cursor: pointer;
+        a {
+          color: $yellow01;
+        }
         @media (max-width: $spwidth) {
           font-size: 1rem;
           margin: 0 auto;
