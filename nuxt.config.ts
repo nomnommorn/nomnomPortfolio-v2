@@ -6,9 +6,6 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-time"
   ],
-  app: {
-    baseURL: '/nomnomPortfolio-v2/',
-  },
   routeRules: {
     '/': { prerender: true }
   },
