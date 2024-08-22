@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   ],
   app: {
     baseURL: '/nomnomPortfolio-v2/',
-  }
+  },
   routeRules: {
     '/': { prerender: true }
   },
