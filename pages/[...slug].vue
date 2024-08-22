@@ -23,6 +23,17 @@
 </template>
 
 <script setup lang="ts">
+
+useHead({
+    title: 'Works' + '| asaco\'s Portfolio',
+		script: [
+			{
+				type: "text/javascript",
+				src: "http://www.instagram.com/embed.js",
+				tagPosition: 'bodyClose'
+			}
+		]
+});
 </script>
 
 <style lang="scss" scope>
@@ -85,6 +96,7 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
+      column-gap: 10px;
       @media (max-width: $spwidth) {
         width: 100%;
         display: block;
