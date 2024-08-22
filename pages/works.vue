@@ -40,6 +40,12 @@ const query = {
     width: 95%;
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    @media (max-width: $spwidth) {
+      width: 100%;
+      display: block;
+    }
     li {
       float: left;
       width: 30%;
@@ -48,14 +54,19 @@ const query = {
       @media (max-width: $spwidth) {
         float: unset;
         width: 100%;
-        margin-right: 5%;
-        margin-bottom: 5%;
-        height: 250px;
+        margin-bottom: 50px;
+        height: auto;
       }
       a {
         width: 100%;
         height: 100%;
         display: block;
+        &:hover {
+          .works_tag {
+            color: #000;
+            opacity: .5;
+          }
+        }
         .works_img {
           background: $mizuiro01;
           width: 100%;
@@ -93,7 +104,7 @@ const query = {
           background-color: $mizuiro01;
           border-radius: 150px;
           padding: 5px;
-          margin-right: 7px;
+          margin: 0 7px 7px 0;
           &::before {
             content:"#";
             float: left;
