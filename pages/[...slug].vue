@@ -29,7 +29,7 @@ useHead({
 		script: [
 			{
 				type: "text/javascript",
-				src: "http://www.instagram.com/embed.js",
+				src: "https://www.instagram.com/embed.js",
 				tagPosition: 'bodyClose'
 			}
 		]
